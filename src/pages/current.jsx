@@ -17,7 +17,7 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 
 const actions = [
   {
-    title: 'Watching',
+    title: 'Watching [COMING SOON]',
     href: '#',
     icon: TvIcon,
     iconForeground: 'text-teal-700',
@@ -26,14 +26,14 @@ const actions = [
   },
   {
     title: 'Reading',
-    href: '#',
+    href: '/current/reading',
     icon: BookOpenIcon,
     iconForeground: 'text-purple-700',
     iconBackground: 'bg-purple-50',
     description: "Dive into the pages I'm currently flipping through. From tech manuals to comic books, discover what's currently shaping my perspectives."
   },
   {
-    title: 'Thinking',
+    title: 'Thinking [COMING SOON]',
     href: '#',
     icon: ChatBubbleLeftIcon,
     iconForeground: 'text-sky-700',
@@ -41,7 +41,7 @@ const actions = [
     description: "What's occupying my thoughts lately? Whether it's a current issue or a personal reflection, you'll find a hint of my mental landscape here."
   },
   {
-    title: 'Eating',
+    title: 'Eating [COMING SOON]',
     href: '#',
     icon: UserMinusIcon,
     iconForeground: 'text-yellow-700',
@@ -49,7 +49,7 @@ const actions = [
     description: "Navigating life with Type 2 diabetes, this section holds me accountable by sharing what I'm currently eating to manage my condition."
   },
   {
-    title: 'Coding',
+    title: 'Coding [COMING SOON]',
     href: '#',
     icon: CommandLineIcon,
     iconForeground: 'text-rose-700',
@@ -57,7 +57,7 @@ const actions = [
     description: "Get a glimpse of my current coding endeavors. Projects, languages, or a code kata—it's a peek into my digital playground."
   },
   {
-    title: 'Learning',
+    title: 'Learnin [COMING SOON]',
     href: '#',
     icon: AcademicCapIcon,
     iconForeground: 'text-indigo-700',
@@ -65,7 +65,7 @@ const actions = [
     description: "What am I learning? From new skills to new perspectives, this is where I share my current thirst for new things. Both technical and whatever else 😀."
   },
   {
-    title: 'Training',
+    title: 'Training [COMING SOON]',
     href: '#',
     icon: UserPlusIcon,
     iconForeground: 'text-indigo-700',
@@ -73,7 +73,7 @@ const actions = [
     description: " I'm currently striving to shed some (lots of) pounds while building endurance and strength. Track my fitness journey and routine here."
   },
   {
-    title: 'Listening',
+    title: 'Listening [COMING SOON]',
     href: '#',
     icon: MusicalNoteIcon,
     iconForeground: 'text-indigo-700',
