@@ -1,0 +1,122 @@
+import { ProjectLayout } from '@/components/ProjectLayout'
+import Image from 'next/image'
+import tvdb from './thetvdb.png'
+import whatisonthetv from './whatisonthetv.png'
+import swagger from './swagger-tvdb.png'
+import bookmarks3 from './bookmarks3.png'
+
+export const meta = {
+  author: 'Stephen McCullough',
+  title: 'whatisonthe.tv'
+}
+
+export default (props) => <ProjectLayout meta={meta} {...props} />
+
+<div class="flex">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" stroke-width="1.5" fill="green" class="w-6 h-6">
+  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+</svg>
+<path fill-rule="evenodd" d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm6.39-2.908a.75.75 0 01.766.027l3.5 2.25a.75.75 0 010 1.262l-3.5 2.25A.75.75 0 018 12.25v-4.5a.75.75 0 01.39-.658z" clip-rule="evenodd" />
+<span className="ml-2">&nbsp;In Active Development</span>
+</div>
+
+### History
+
+The journey of whatisonthe.tv spans several iterations, having its roots as far back as 2003. After a period of activity until 2008, it found itself in digital limbo, sidelined and relegated to bit rot.
+
+## Past Use
+
+Originally, whatisonthe.tv served as my personal tool for tracking and searching TV Listings which provided TV shows, movies and actors via a web interface. Beyond its practical uses, such as keeping an eye on my favorite shows and acotrs, the project was an experimental playground for learning new technologies. However, with the rise of streaming platforms, my consumption patterns shifted away from linear TV, leading the utility of whatisonthe.tv to wane and eventually halt, entering a period of bit rot.
+
+### Revival
+
+As of 2023, the project has taken on a new direction. Veering away from its initial incarnation as a TV Listings platform, the app is in the process of being refocused to track my personal viewing habits. Currently, it's in its alpha stage of development.
+
+<Image src={whatisonthetv} alt="whatisonthe.tv" />
+
+### A Tale of Three Apps
+
+Initially conceived as a Perl application paired with a MySQL database, it evolved into an ORM-based Perl app using Class::DBI and KinoSearch for full-text searches. Fast forward to today, and whatisonthe.tv has metamorphosed into a triad of applications. The user-facing front end is built using React and is hosted at whatisonthe.tv. This front end communicates with a Rails API hosted at api.whatisonthe.tv. When necessary, the API fetches data from the TVDB via my Ruby gem, thetvdb_api.
+
+### Front End (whatisonthe.tv)
+
+The user interface of whatisonthe.tv is crafted using React.js and enjoys hosting on Vercel, accessible through a custom domain. Designed as a Single Page Application (SPA), it utilises react-router for navigation and react-query for fetching data. This front end interfaces seamlessly with the API located at api.whatisonthe.tv.
+
+### API (api.whatisonthe.tv)
+
+The API employs cache-aside and lazy loading design principles to optimise data retrieval. When a search query is made, the API first checks its own data store. If the data exists, it's immediately returned to the user. If not, the API utilizes my tvdb_api gem to fetch the information from TVDB's API. To facilitate this, a set of background workers run asynchronously to gather and store this new data in the API's data store, ensuring it's readily available for future queries.
+
+```plaintext
++---------------------+       +--------------------+
+|    Front-End App    |<----->|        API         |
+|  (whatisonthe.tv)   |       | (api.whatisonthe.tv)|
++---------------------+       +--------------------+
+                                |
+                                | Check Cache
+                                v
+                         +--------------+
+                         |   Data Store  |
+                         +--------------+
+                                |
+                                | Cache Miss
+                                v
+                         +--------------+
+                         | tvdb_api gem  |
+                         +--------------+
+                                |
+                                | Fetch Data
+                                v
+                         +--------------+
+                         |     TVDB      |
+                         |     API       |
+                         +--------------+
+                                |
+                                | Background Workers
+                                v
+                         +--------------+
+                         |   Data Store  |
+                         +--------------+
+                                |
+                                | Return Data
+                                v
+```
+
+### Future
+
+At the moment, the project is in active development. While I do plan to launch a changelog app to dynamically display updates and modifications across each project, that feature is still in the works. In the meantime, for an up-to-date view on the latest changes, you can either explore the web app itself or visit the associated GitHub repositories.
+
+<h2>Links</h2>
+
+<div class="flex">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+</svg>
+<a href="https://whatisonthe.tv"><span className="ml-2">&nbsp;Site</span></a>
+</div>
+
+<div class="flex">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+</svg>
+
+<a href="https://github.com/swmcc/whatisonthe.tv"><span className="ml-2">&nbsp;GitHub Repo (Front End)</span></a>
+</div>
+
+<div class="flex">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+</svg>
+
+<a href="https://github.com/swmcc/api.whatisonthe.tv"><span className="ml-2">&nbsp;GitHub Repo (API)</span></a>
+</div>
+
+<div class="flex">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" stroke-width="1.5" class="w-6 h-6">
+  <path d="M3.196 12.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 12.87z" />
+  <path d="M3.196 8.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 8.87z" />
+  <path d="M10.38 1.103a.75.75 0 00-.76 0l-7.25 4.25a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.76 0l7.25-4.25a.75.75 0 000-1.294l-7.25-4.25z" />
+</svg>
+<a href="#">
+<span className="ml-2">&nbsp;react.js, rails, api, sidekiq</span>
+</a>
+</div>

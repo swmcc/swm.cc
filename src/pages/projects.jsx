@@ -59,8 +59,8 @@ const projects = [
   {
     name: 'whatisonthe.tv',
     description:
-      'COMING SOON....',
-    link: { href: '#' },
+      'My personal tool for tracking my TV and movie consumption.',
+    link: { href: '/projects/whatisonthetv' },
     logo: logoWhatIsOnTheTv,
   },
   {
