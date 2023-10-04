@@ -39,7 +39,7 @@ const projects = [
     name: 'tvdb',
     description:
       'TheTVDB is one of the longest-running community-driven TV and Movie databases.',
-    link: { href: '#' },
+    link: { href: '/projects/tvdb' },
     logo: logoTvDB,
   },
   {
