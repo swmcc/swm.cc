@@ -11,9 +11,9 @@ const books = [
     name: 'How to Work With (Almost) Anyone',
     description:
       'Learning practical ways to navigate different personalities at work. Eye-opening insights on team dynamics and cooperation.',
-    link: { href: '#' },
+    link: { href: '/articles/how-to-work-with-anyone' },
     logo: bookHowToWorkWithAnyone,
-    status: 'Currently Reading',
+    status: 'October 2023',
   },
   {
     name: 'Will It Make The Boat Go Faster?',
