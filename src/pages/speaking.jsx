@@ -37,10 +37,24 @@ export default function Speaking() {
       </Head>
       <SimpleLayout
         title="I’ve spoken at many events, some big, some small."
-        intro="I love sharing my ideas and experiences with others. Speaking is a skill that I’ve worked hard to develop over the years, and I’m always looking for new opportunities to share. I haven't really spoke at any events in the last few years (due to the pandemic), but I'm hoping to get back into it soon."
+        intro="I love sharing my ideas and experiences with others. Speaking is a skill that I’ve worked hard to develop over the years, and I’m always looking for new opportunities to share. I have recently resumed speaking at events as of October 2023, following a hiatus due to the pandemic and subsequent lockdowns. It's an exciting new chapter, and I'm eager to see where this journey takes me!"
       >
         <div className="space-y-20">
           <SpeakingSection title="Conferences">
+            <Appearance
+              href="#"
+              title="Leveraging AWS SageMaker for Scalable AI Deployment with Python: A Real-World Journey"
+              description="I share my experiences of using AWS SageMaker to deploy a machine learning model to production (at scale). I will discuss the challenges I faced, the lessons I learned, and the solutions I found."
+              event="PyCon Ireland 2023"
+              cta=""
+            />
+            <Appearance
+              href="#"
+              title="From Family Room to Broadcasting Room: Building a Personalised Family TV Channel"
+              description="How I pivoted from the family photo album to a broadcasting channel. This channel was custom-built to enrich my family interactions and share precious moments, even when we're miles apart."
+              event="NIDC 2023"
+              cta=""
+            />
             <Appearance
               href="#"
               title="The Wire & Neo4j: A breakdown"
